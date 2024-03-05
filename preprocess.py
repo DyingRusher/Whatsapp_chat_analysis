@@ -48,7 +48,7 @@ def process(data):
         user.append(m['sender'])
 
     df['user'] = user
-    df = df[df!='<Media omitted>']
+    # df = df[df!='<Media omitted>']
 
     df2 = df.dropna()
     df3= df2.reset_index(drop=True)
