@@ -59,7 +59,16 @@ if uploaded_file is not None:
                 st.dataframe(new_df)
                 
         #wordcloud
+        st.title("Word graph")
         wc_img = helper.word_img(selected_user,df)
         fig,ax = mpl.subplots()
         ax.imshow(wc_img)
+        st.pyplot(fig)
+        
+        #most common words
+        st.title("Most commen words")
+        wc_df = helper.most_common(selected_user,df)
+        fig,ax = mpl.subplots()
+        ax.barh(wc_df['words'],wc_df['frequence'])
+        
         st.pyplot(fig)
